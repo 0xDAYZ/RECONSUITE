@@ -1,15 +1,26 @@
-FROM python:3.10
+FROM kalilinux/kali-rolling
 
-RUN pip install pyfiglet 
+RUN apt-get update
 
-RUN pip install colorama
+RUN apt-get install libnetfilter-queue-dev -y
+
+RUN apt-get install net-tools -y
+
+RUN apt-get install python2 -y
+
+RUN apt-get install python3 -y
+
+RUN apt-get install pip -y
+
+RUN pip install pyfiglet colorama scapy datetime requests netfilterqueue prettytable
 
 WORKDIR ~
 
-RUN apt-get install git -y
+RUN apt install git -y
 
 RUN git clone https://github.com/0xDAYZ/RECONSUITE.git
 
-WORKDIR ./RECONSUITE
+WORKDIR RECONSUITE
 
 CMD ["./reconx"]
+
