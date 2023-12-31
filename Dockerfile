@@ -4,11 +4,11 @@ RUN pip install pyfiglet
 
 RUN pip install colorama
 
-WOKRDIR ~
+WORKDIR ~
 
 RUN apt-get install git -y
 
-git clone https://github.com/0xDAYZ/RECONSUITE.git
+RUN git clone https://github.com/0xDAYZ/RECONSUITE.git
 
 WORKDIR ./RECONSUITE
 
