@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ "$EUID" -ne 0 ]
+	then echo "ReconSuite says: Please run with root previleges."
+	exit
+else
+	echo "Starting ReconSuite..."
+	sleep 3
+	python3 ./main.py
+	
+fi
